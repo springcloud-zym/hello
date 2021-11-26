@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ct.lightdecay.mapper.LightdecaydetailMapper">
+
+
+    <select id="getPage" resultType="com.ct.lightdecay.entity.Lightdecaydetail">
+        select id,efbm,efmc,efwgbz,efxxdkbm,efxxdkmc,efgwbm,efgwmc,xxzxgs,gscjsj
+            from lightdecaydetail
+            <where>
+                <if test="keyword!=null and keyword!=''">
+                    efbm like concat('%',#{keyword},'%')
+                    or efxxdkbm like concat('%',#{keyword},'%')
+                </if>
+            </where>
+    </select>
+</mapper>

@@ -1,0 +1,17 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: lightdecay
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/lightdecay?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true
+    username: root
+    password: root
+    max-active: 30
+    initial-size: 3
+    max-wait: 12000
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
